@@ -1,0 +1,341 @@
+/* Configurações Globais e de Fonte */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+     font-family: 'Inter', sans-serif;
+
+    /* ----- PROPRIEDADES DO BACKGROUND ----- */
+    background-image: url('img/via-lactea.png');
+    background-size: cover;          
+    background-position: center center; 
+    background-repeat: no-repeat;     
+    background-attachment: fixed;
+    /* ----------------------------------------------------- */
+
+    color: #fff;                /*   Cor do texto principal */
+    min-height: 100vh;            /*   Garante que o body ocupe a altura total da tela */
+    display: flex;                /*   layout flexível (navbar, main, footer) */
+    flex-direction: column;       /*   Organiza os itens verticalmente */
+    align-items: center;          /*   Centraliza o conteúdo (cartões) horizontalmente */
+    overflow-x: hidden;           /*   Evita rolagem horizontal indesejada */
+}
+
+/* Estilo Base do Efeito Glassmorphism */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+}
+
+/* --- Navbar (Menu Superior) --- */
+.navbar-container {
+    width: 100%;
+    padding: 20px 5%; /* Usa porcentagem para ser responsivo */
+    position: fixed; /* Deixa o menu fixo no topo */
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    width: 100%;
+    max-width: 1400px; /* Limita a largura máxima */
+    margin: 0 auto;
+    /* Aplicando o efeito de vidro */
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px; /* Bordas bem arredondadas */
+}
+
+.logo img {
+    height: auto;
+    width: 50px;
+    background-color: #0b3d91; /* Cor azul oficial da NASA ("International Klein Blue") */
+    border-radius: 50%;     
+    padding: 2px;            
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px; /* Espaçamento entre os links */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #e0e0e0;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+.nav-botoes {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icone-globo {
+    font-size: 24px;
+}
+
+.botao-colecao {
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.botao-colecao:hover {
+    background: #fff;
+}
+
+/* --- Conteúdo Principal --- */
+.conteudo-principal {
+    margin-top: 120px; /* Espaço para o navbar fixo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.cartao-principal {
+    width: 100%;
+    max-width: 1100px;
+    padding: 25px;
+    position: relative;
+}
+
+.cartao-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo-cartao {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.botao-login {
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.cartao-corpo {
+    display: flex;
+    gap: 20px;
+}
+
+/* Coluna da Esquerda (Tênis) */
+.coluna-esquerda {
+    flex: 1;
+}
+
+.card-produto-nike {
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    height: 100%;
+}
+
+.imagem-tenis {
+    width: 100%;
+    max-width: 250px;
+    margin-top: 20px;
+    margin-bottom: 40px; /* Espaço para o botão abaixo */
+    transform: rotate(-15deg);
+}
+
+.botao-busca-pequeno {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.botao-refresh {
+    width: calc(100% - 40px);
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Coluna Central */
+.coluna-central {
+    flex: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.numero-secao {
+    font-size: 100px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8);
+    flex-basis: 15%;
+}
+
+.detalhes-texto {
+    flex-basis: 75%;
+    font-size: 14px;
+    color: #dcdcdc;
+    line-height: 1.6;
+}
+
+.card-produto-hoodie {
+    flex-basis: 100%;
+    background-image: url('https://i.ibb.co/KXsBbn3/bubble.png'); /* Simulação da bolha */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.imagem-hoodie {
+    width: 60%;
+    max-width: 280px;
+}
+
+.hoodie-info {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px 15px;
+    border-radius: 15px;
+}
+
+.botao-add-carrinho {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.seta-navegacao {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+}
+
+.seta-direita {
+    top: 50%;
+    right: -25px; /* Metade para fora do cartão */
+    transform: translateY(-50%);
+}
+
+/* --- Banner Inferior --- */
+.banner-inferior {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px 20px;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
+
+.imagem-pequena-banner {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.banner-info h3 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.banner-info p {
+    font-size: 12px;
+    color: #dcdcdc;
+}
+
+.seta-banner {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    font-size: 28px;
+    padding-bottom: 4px;
+}
+
+/* --- Paginação --- */
+.paginacao {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.ponto {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+}
+
+.ponto.ativo {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+
